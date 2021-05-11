@@ -13,13 +13,18 @@
         <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">  
     </head>
     <style>
-         body {
+    * {
+          box-sizing: border-box;
+        }
+        
+        /* Add a gray background color with some padding */
+        body {
           font-family: 'Bebas Neue', cursive;
           padding: 20px;
           background: #f1f1f1;
         }
         p{
-            font-family: 'Abril Fatface', cursive;
+            font-family: Arial, Helvetica, sans-serif;
         }
         /* Header/Blog Title */
         .header {
@@ -27,6 +32,64 @@
           font-size: 40px;
           text-align: center;
           background: white;
+        }
+        
+        /* Create two unequal columns that floats next to each other */
+        /* Left column */
+        .leftcolumn {   
+          float: left;
+          width: 75%;
+        }
+        
+        /* Right column */
+        .rightcolumn {
+          float: left;
+          width: 25%;
+          padding-left: 20px;
+        }
+        
+        /* Fake image */
+        .fakeimg {
+          background-color: rgba(99, 61, 18, 0.521);
+          width: 100%;
+          padding: 20px;
+        }
+        .home{
+            
+            width:100%;
+            height:auto;
+            overflow:hidden;
+            padding-block: 10px;
+        }
+        /* Add a card effect for articles */
+        .card {
+           background-color: white;
+           padding: 20px;
+           margin-top: 60px;
+           width: fit-content;
+        }
+        
+        /* Clear floats after the columns */
+        .row:after {
+          content: "";
+          display: table;
+          clear: both;
+        }
+        
+        /* Footer */
+        .footer {
+          padding: 20px;
+          text-align: center;
+          background: #ddd;
+          margin-top: 20px;
+        }
+        
+        /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+        @media screen and (max-width: 800px) {
+          .leftcolumn, .rightcolumn {   
+            width: 100%;
+            padding: 0;
+          }
         }
         .topnav {
             background-color:tan;
@@ -67,6 +130,25 @@
             cursor: pointer;
             font-family: 'Bebas Neue', cursive;
         }
+          
+        .dropdown {
+          position: relative;
+          
+        }
+        .dropdown-content {
+          display: none;
+          position:relative;
+          background-color:rgba(99, 61, 18, 0.521);
+          box-shadow:rgb(228, 214, 185) ;
+          padding:4px;
+          z-index: 1;
+        }
+
+        .dropdown:hover .dropdown-content {
+          display:flex;
+          padding:4px;
+          font-size: small;
+        }
 
     </style>
     </head>
@@ -76,9 +158,13 @@
              <h2>Artistic Beauty</h2>
              <nav>
                <div class="topnav">
-                <a href="HomePage.html">Home</a>
-                <a href="AboutPage.html">About</a>
-                <a href="ContactPage.html">Contact</a>
+                   <a href="HomePage.html">Home</a>
+                   <div class="dropdown">
+                    <a href="AboutPage.html">Meeting Art</a> <div class="dropdown-content">
+                        <p> <a href="MakeupPage.html"> Art...Meet Makeup </a>  </p>
+                      </div>
+                   </div>
+                   <a href="ContactPage.html">Contact</a>
                    <div class="search-container">
                      <form action="/action_page.php">
                        <input type="text" placeholder="Search.." name="search">
@@ -90,5 +176,22 @@
            </div>
        </header>
 
-       <h1>This is the About Page</h1>
+       
+       <div class="row">
+        <div class="leftcolumn">
+          <div class="card">
+            <h1> When Fashion Meets Art? </h1>
+            <p>Art is taking a step away from its typical position on museum walls, all thanks to high-fashion adaptations. Indeed, contemporary designers have produced various garments inspired by painters of the past, from Impressionists to Mannerists. It’s important to note, however, that the clothes are not necessarily carbon copies of the authentic art; designers may choose to draw from particular aspects of the scene—including patterns, color scheme, and overall concept—and put their own spin on the works. See below for the top 21st-century references to legendary artists who continue to leave a lasting legacy through style. </p>
+       <h2>Versace – Andy Warhol</h2>
+       <img src="Versace.png" style="height:20%; width:40%;"> 
+       <p>Spring 1991. Gianni Versace creates a collection inspired by Andy Warhol’s colourful portraits of Marilyn Monroe and other famous people. Look at this fabulous total look – one shoulder tight jumpsuit.</p>
+       <br>
+       <h2> Yves Saint Laurent + Mondrian</h2>
+       <img src="YSL.jpeg" style="height:20%; width:40%;"> 
+       <p>This is probably the most popular art-inspired dress. Believe it or not, this modern trapeze knit dress with recognizable colours and simple lines was designed in 1960. That is a total classic!</p>
+       <h2>Louis Vuitton + Oscar-Claude Monet </h2>
+       <img src="Louis-Vuitton.jpeg">
+       <p>Jeff Koons was definitely very into Monet’s paintings. We assume that he especially loves the “Water Lillies” painting as he literally has put it on the different types of LV bags.</p>
+       </div>
+       
     </body>
